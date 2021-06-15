@@ -16,7 +16,7 @@ class CreateBookArticlesTable extends Migration
         Schema::create('book_articles', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('book_id')->unsigned();
-            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned()->nullable();
             $table->string('serial_number')->unique();
             $table->timestamps();
 

@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(BookArticle::class, function (Faker $faker) {
     return [
-        //
+        'serial_number' => $faker->unique()->ean13,
     ];
 });
