@@ -18,6 +18,7 @@ class CreateBookArticlesTable extends Migration
             $table->bigInteger('book_id')->unsigned();
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->string('serial_number')->unique();
+            $table->string('language');
             $table->timestamps();
 
             $table->foreign('book_id')->references('id')->on('books');

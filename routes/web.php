@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('/', 'HomepageController@show');
+Route::get('/', 'frontend\HomepageController@show');

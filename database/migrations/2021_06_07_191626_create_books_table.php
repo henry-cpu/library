@@ -16,6 +16,7 @@ class CreateBooksTable extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('author_id')->unsigned();
+            $table->bigInteger('category_id')->unsigned()->nullable();
             $table->string('title');
             $table->string('slug');
             $table->dateTime('published_at');
@@ -24,6 +25,7 @@ class CreateBooksTable extends Migration
             $table->timestamps();
 
             $table->foreign('author_id')->references('id')->on('authors');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

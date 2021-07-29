@@ -11,18 +11,16 @@ class BookSeeder extends Seeder
      */
     public function run()
     {
-        $authors_id = [];
-        $authors = \App\Author::all();
 
-        foreach ($authors as $author){
-            $authors_id[] = $author->id;
-        }
+        $author_ids = \App\Author::pluck('id');
+        $category_ids = \App\Category::pluck('id');
 
         $count = 0;
         while ($count <= 20) {
             factory(\App\Book::class)->create(
                 [
-                    'author_id' => $authors_id[array_rand($authors_id, 1)],
+                    'author_id' => $author_ids->random(),
+                    'category_id' => $category_ids->random(),
                 ]
             );
             $count++;
