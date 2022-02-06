@@ -11,4 +11,8 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', 'frontend\HomepageController@show');
+
+Route::get('/home', 'HomeController@index')->name('home');

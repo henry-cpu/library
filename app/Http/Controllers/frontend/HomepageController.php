@@ -9,9 +9,7 @@ class HomepageController extends Controller
 {
     public function show()
     {
-        $categories = Category::pluck('id');
-        dd($categories->random());
 
-        return view('welcome');
+        return view('auth/login');
     }
 }
